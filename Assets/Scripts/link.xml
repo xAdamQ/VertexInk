@@ -1,0 +1,9 @@
+﻿<linker>
+    //this file is related to the unity linker that stripes the unused code from the build
+    //it enables me to make high stripping settings, while preserving some types that are used implicitly
+    //and not found by the linker
+    <assembly fullname="Unity.RenderPipelines.Core.Runtime">
+        //some types in this namespace are used implicitly so the linker does't include them automatically
+        <namespace fullname="UnityEngine.Rendering.UI" preserve="all"/>
+    </assembly>
+</linker>
